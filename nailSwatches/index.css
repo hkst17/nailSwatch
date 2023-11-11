@@ -1,4 +1,4 @@
-.nail {
+.finger {
     background-color: white;
     /* border: 1px solid #000000; */
     width: 100px;
@@ -6,6 +6,7 @@
     border-radius: 50% 50% 35% 35%;
     position: relative;
     padding: 30px;
+    margin: 20px;
 }
 
 .triangle-left {
@@ -17,13 +18,10 @@
 }
 
 .container {
-    /* padding: 50px; */
     background-color: #67A3D9;
     border-radius: 25px;
     margin: 100px;
     padding: 50px;
-
-    /* width: max-content; */
     height: max-content;
 }
 
@@ -42,7 +40,7 @@
 .nails {
     margin: -50px;
     display: inline-block;
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
     scale: 70%;
     width: fit-content;
@@ -98,7 +96,7 @@
 #reset {
     width: fit-content;
     position: relative;
-    right: -550px;
+    right: -400px;
     scale: 80%;
 }
 
@@ -156,9 +154,7 @@ body {
     font-family: 'More Sugar', sans-serif;
     text-align: center;
     color: white;
-    /* margin: auto; */
     align-content: center;
-    /* padding: 100px; */
     display: inline-block;
     position: relative;
     width: auto;
