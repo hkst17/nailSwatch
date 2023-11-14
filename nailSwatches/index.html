@@ -12,13 +12,31 @@
 </head>
 
 <body class="center">
+
+    <!-- <button class="right" onclick="moveright()">right</button> -->
+
     <div class="container">
         <button class="buttonRec" onclick="reset('white')" id="reset">Reset all nails</button>
+        <div class="dropdown">
+            <button class="buttonRec">Nail set</button>
+            <div class="dropdown-options">
+                <a href="#all">ALL</a>
+                
+                <a href="#">Cow</a>
+                <a href="#elegantFlower">Elegant Flower</a>
+                <div id="elegantFlower">
+                    
+                </div>
+                <a href="#">Latte Art</a>
+            </div>
+        </div>
         <h1 center>Nail Swatches</h1>
 
         <p class="subheading">
             Here we are visually swatching to see what looks good together!
         </p>
+        <!-- <img src="./img/cowFull.png" alt="./img/cowFull.png" class=""> -->
+        <div id="triangle-down"></div>
         <!-- <div id="image-container">
             <img id="image" src="./img/logo.png">
         </div>
@@ -48,11 +66,17 @@
             </div>
         </div>
         <div class="action">
-            <button class="buttonRec"
-                onclick="finger('https://cdn0.iconfinder.com/data/icons/ie_Bright/128/plus_add_blue.png')">Red</button>
-            <button class="buttonRec"
-                onclick="finger('http://31.media.tumblr.com/fca646cd8fe87906e605ad7e8d039903/tumblr_mmoz4fWT6U1soh1p8o1_500.png')">Green</button>
-            <button class="buttonRec" onclick="finger('./img/logo.png')">Blue</button>
+            <img src='./img/frenchTip.png' class="nailChoice" onclick="finger('./img/frenchTip.png')"/>
+            <img src='./img/frenchTipsWFlower.png' class="nailChoice" onclick="finger('./img/frenchTipsWFlower.png')"/>
+            <img src='./img/frenchTipsWFlowers.png' class="nailChoice" onclick="finger('./img/frenchTipsWFlowers.png')"/>
+            <img src='./img/frenchTipsWFlowerRounded.png' class="nailChoice" onclick="finger('./img/frenchTipsWFlowerRounded.png')"/>
+        </div>
+        <div class="action">
+            <img src='./img/spongebobFlowers.png' class="nailChoice" onclick="finger('./img/spongebobFlowers.png')"/>
+            <img src='./img/spongebobIceCream.png' class="nailChoice" onclick="finger('./img/spongebobIceCream.png')"/>
+            <img src='./img/doodlebob.png' class="nailChoice" onclick="finger('./img/doodlebob.png')"/>
+            <img src='./img/jellyfish.png' class="nailChoice" onclick="finger('./img/jellyfish.png')"/>
+            <img src='./img/plankton.png' class="nailChoice" onclick="finger('./img/plankton.png')"/>
         </div>
     </div>
 

@@ -1,24 +1,32 @@
 var num = 1;
-function finger(img){
+function finger(img) {
+    moveright();
     console.log(img);
-    const finger = document.getElementById('finger'+num+'ID');
+    const finger = document.getElementById('finger' + num + 'ID');
     finger.style = `background-image: url(${img})`;
     num++;
-    
+    if(num>5){
+        document.getElementById('triangle-down').style.visibility = 'hidden';
+    }
 }
 
 function reset(color) {
     num = 1;
-    document.getElementById('finger1ID').style = `background-color:${color}`;
-    document.getElementById('finger2ID').style = `background-color:${color}`;
-    document.getElementById('finger3ID').style = `background-color:${color}`;
-    document.getElementById('finger4ID').style = `background-color:${color}`;
-    document.getElementById('finger5ID').style = `background-color:${color}`;
+    document.getElementById('triangle-down').style.visibility = 'visible';
+    document.getElementById('triangle-down').style.left = '407px';
+    for (var i = 1; i < 6; i++) {
+        document.getElementById('finger' + i + 'ID').style = `background-color:${color}`;
+    }
 }
 
+function moveright() {
+    const arrow = document.getElementById('triangle-down');
+    arrow.style.left = `${arrow.offsetLeft + 139}px`;
+}
 // const colorPicker = document.getElementById("color-picker");
 // const image = document.getElementById("image");
 
 // colorPicker.addEventListener("input", function() {
 //   image.style.backgroundColor = `hue-rotate(${this.value}deg)`;
 // });
+
