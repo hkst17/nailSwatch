@@ -11,23 +11,19 @@
     <script src="./index.js" defer></script>
 </head>
 
-<body class="center">
+<body class="center" onload="show('elegantFlower', 'ALL'); show('spongebob', 'ALL')">
 
     <!-- <button class="right" onclick="moveright()">right</button> -->
 
     <div class="container">
         <button class="buttonRec" onclick="reset('white')" id="reset">Reset all nails</button>
         <div class="dropdown">
-            <button class="buttonRec">Nail set</button>
+            filter by nail:
+            <button class="buttonRec" id="buttonWords"></button>
             <div class="dropdown-options">
-                <a href="#all">ALL</a>
-                
-                <a href="#">Cow</a>
-                <a href="#elegantFlower">Elegant Flower</a>
-                <div id="elegantFlower">
-                    
-                </div>
-                <a href="#">Latte Art</a>
+                <a href='#elegantFlower' onclick="show('elegantFlower', 'ALL'); show('spongebob', 'ALL')">ALL</a>
+                <a href='#elegantFlower' onclick="show('elegantFlower','Elegant Flower'); hide('spongebob')">Elegant Flower</a>
+                <a href='#spongebob' onclick="show('spongebob','Spongebob'); hide('elegantFlower')">Spongebob</a>
             </div>
         </div>
         <h1 center>Nail Swatches</h1>
@@ -35,51 +31,49 @@
         <p class="subheading">
             Here we are visually swatching to see what looks good together!
         </p>
+
+        <div id="picker">
+            <p>Select a color: </p>
+            <input type="color" name="favcolor" value="#ffffff" id="color_picker" onchange="setColor(this);" />
+        </div>
         <!-- <img src="./img/cowFull.png" alt="./img/cowFull.png" class=""> -->
         <div id="triangle-down"></div>
-        <!-- <div id="image-container">
-            <img id="image" src="./img/logo.png">
-        </div>
-          
-        <label for="color-picker">Select a color:</label>
-        <input id="color-picker" type="color"> -->
+
+        <!-- <div id="image">
+            <img src="./img/jellyfish.png">
+        </div> -->
 
         <div class="row">
             <div class="nails center row">
-                <div class="finger" id="finger1ID"></div>
-                <!-- <div class="dropdown">
-                    <button class="buttonRec">Profile</button>
-                    <div class="dropdown-options">
-                        <a href="#">Dashboard</a>
-                        <a href="#">Setting</a>
-                        <a href="#">Logout</a>
-                    </div>
-                </div> -->
-                <div class="finger" id="finger2ID"></div>
-                <!-- <div class="row">
-                    <button id="triangle"></button>
-                    <div class="label">testing</div>
-                </div> -->
-                <div class="finger" id="finger3ID"></div>
-                <div class="finger" id="finger4ID"></div>
-                <div class="finger" id="finger5ID"></div>
+                <div class="finger" id="finger1ID" onchange="setColor(this)"></div>
+                <div class="finger" id="finger2ID" onchange="setColor(this)"></div>
+                <div class="finger" id="finger3ID" onchange="setColor(this)"></div>
+                <div class="finger" id="finger4ID" onchange="setColor(this)"></div>
+                <div class="finger" id="finger5ID" onchange="setColor(this)"></div>
             </div>
         </div>
-        <div class="action">
-            <img src='./img/frenchTip.png' class="nailChoice" onclick="finger('./img/frenchTip.png')"/>
-            <img src='./img/frenchTipsWFlower.png' class="nailChoice" onclick="finger('./img/frenchTipsWFlower.png')"/>
-            <img src='./img/frenchTipsWFlowers.png' class="nailChoice" onclick="finger('./img/frenchTipsWFlowers.png')"/>
-            <img src='./img/frenchTipsWFlowerRounded.png' class="nailChoice" onclick="finger('./img/frenchTipsWFlowerRounded.png')"/>
+
+        
+        <div class="action" id="elegantFlower">
+            <img src='./img/frenchTip.png' class="nailChoice"
+                onclick="isClear(); finger('./img/frenchTip-clear.png')" />
+            <img src='./img/frenchTipWFlower.png' class="nailChoice"
+                onclick="isClear(); finger('./img/frenchTipsWFlower-clear.png')" />
+            <img src='./img/frenchTipsWFlowers.png' class="nailChoice"
+                onclick="isClear(); finger('./img/frenchTipsWFlowers-clear.png')" />
+            <img src='./img/frenchTipsWFlowerRounded.png' class="nailChoice"
+                onclick="isClear(); finger('./img/frenchTipsWFlowersRounded-clear.png')" />
+
         </div>
-        <div class="action">
-            <img src='./img/spongebobFlowers.png' class="nailChoice" onclick="finger('./img/spongebobFlowers.png')"/>
-            <img src='./img/spongebobIceCream.png' class="nailChoice" onclick="finger('./img/spongebobIceCream.png')"/>
-            <img src='./img/doodlebob.png' class="nailChoice" onclick="finger('./img/doodlebob.png')"/>
-            <img src='./img/jellyfish.png' class="nailChoice" onclick="finger('./img/jellyfish.png')"/>
-            <img src='./img/plankton.png' class="nailChoice" onclick="finger('./img/plankton.png')"/>
+        <div class="action" id="spongebob">
+            <img src='./img/spongebobFlowers.png' class="nailChoice" onclick="finger('./img/spongebobFlowers.png')" />
+            <img src='./img/spongebobIceCream.png' class="nailChoice" onclick="finger('./img/spongebobIceCream.png')" />
+            <img src='./img/doodlebob.png' class="nailChoice" onclick="finger('./img/doodlebob.png')" />
+            <img src='./img/jellyfish.png' class="nailChoice" onclick="finger('./img/jellyfish.png')" />
+            <img src='./img/plankton.png' class="nailChoice" onclick="finger('./img/plankton.png')" />
         </div>
     </div>
-
+    
 
     </div>
 </body>
