@@ -12,26 +12,21 @@
 </head>
 
 <body class="center" onload="show('basic', 'ALL'); show('elegantFlower', 'ALL'); show('spongebob', 'ALL')">
-
-    <!-- <button class="right" onclick="moveright()">right</button> -->
-
     <div class="container">
         <button class="buttonRec" onclick="reset('white')" id="reset">Reset all nails</button>
+
         <div class="dropdown">
             filter by nail:
             <button class="buttonRec" id="buttonWords"></button>
             <div class="dropdown-options">
                 <a href='#elegantFlower'
                     onclick="show('basic', 'ALL'); show('elegantFlower', 'ALL'); show('spongebob', 'ALL')">ALL</a>
-                <a href='#basic'
-                    onclick="show('basic', 'Basics'); hide('spongebob','Spongebob'); hide('elegantFlower')">Basics</a>
-                <a href='#elegantFlower'
-                    onclick="show('elegantFlower','Elegant Flower'); hide('spongebob'); hide('basic')">Elegant
-                    Flower</a>
-                <a href='#spongebob'
-                    onclick="show('spongebob','Spongebob'); hide('elegantFlower'); hide('basic')">Spongebob</a>
+                <a onclick="show('basic', 'Basics'); hide('spongebob','Spongebob'); hide('elegantFlower')">Basics</a>
+                <a onclick="show('elegantFlower','Elegant Flower'); hide('spongebob'); hide('basic')">Elegant Flower</a>
+                <a onclick="show('spongebob','Spongebob'); hide('elegantFlower'); hide('basic')">Spongebob</a>
             </div>
         </div>
+
         <h1 center>Nail Swatches</h1>
 
         <p class="subheading">
@@ -42,12 +37,8 @@
             <p>Change the color: </p>
             <input type="color" name="favcolor" value="#ffffff" id="color_picker" onchange="setColor(this);" />
         </div>
-        <!-- <img src="./img/cowFull.png" alt="./img/cowFull.png" class=""> -->
-        <div id="triangle-down"></div>
 
-        <!-- <div id="image">
-            <img src="./img/jellyfish.png">
-        </div> -->
+        <div id="triangle-down"></div>
 
         <div class="row">
             <div class="nails center row">
@@ -78,8 +69,8 @@
                 onclick="isClear(); finger('./img/frenchTipsWFlowersRounded-clear.png')" />
             <img src='./img/frenchTipFlowers.png' class="nailChoice"
                 onclick="isClear(); finger('./img/frenchTipFlowers-clear.png')" />
-
         </div>
+
         <div class="action" id="spongebob">
             <h2>Spongebob</h2>
             <img src='./img/spongebobFlowers.png' class="nailChoice" onclick="finger('./img/spongebobFlowers.png')" />
@@ -88,9 +79,6 @@
             <img src='./img/jellyfish.png' class="nailChoice" onclick="finger('./img/jellyfish.png')" />
             <img src='./img/plankton.png' class="nailChoice" onclick="finger('./img/plankton.png')" />
         </div>
-    </div>
-
-
     </div>
 </body>
 

@@ -1,15 +1,14 @@
-var num = 1;
-var clear = 0;
+let num = 1;
+let clear = 0;
 const triangle = document.getElementById('triangle-down');
 const colorPicker = document.getElementById('picker');
 
 function finger(img) {
     moveright();
-    //console.log(img);
     const finger = document.getElementById('finger' + num + 'ID');
     finger.style = `background-image: url(${img})`;
     num++;
-    console.log(clear);
+
     if (num > 5) {
         triangle.style.visibility = 'hidden';
     }
@@ -22,7 +21,8 @@ function reset(color) {
     triangle.style.left = '404px';
     triangle.style.top = '225px';
     colorPicker.style.display = "none";
-    for (var i = 1; i < 6; i++) {
+
+    for (let i = 1; i < 6; i++) {
         document.getElementById('finger' + i + 'ID').style = `background-color:${color}`;
     }
 }
@@ -43,33 +43,22 @@ function hide(nailSet) {
 }
 
 function setColor(color) {
-    var image = [];
+    let image = [];
 
-    for (var i = 1; i < 6; i++) {
+    for (let i = 1; i < 6; i++) {
         image[i] = document.getElementById('finger' + i + 'ID');
         image[i].style.backgroundColor = color.value;
-        //console.log(image[i]);
     }
 
     return image;
-
 }
-
-// function setColorOneByOne(color) {
-//     const image = document.getElementById('finger' + num + 'ID');
-//     image.style.backgroundColor = color.value;
-//     num++;
-// }
 
 function isClear() {
     clear += 1;
 }
 
 function clickHandler(clicked_id) {
-    //isClicked = true;
-    //console.log(clicked_id);
     triangle.style.visibility = 'visible';
-    //colorPicker.style.display = "none";
 
     if (clicked_id == 'finger1ID') {
         triangle.style.left = '404px';
@@ -94,7 +83,6 @@ function clickHandler(clicked_id) {
 }
 
 function alwaysRunning() {
-    //console.log(isClicked);
     if (clear > 0 && num > 5) {
         colorPicker.style.display = "inline-flex";
     }
