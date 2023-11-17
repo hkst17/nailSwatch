@@ -11,52 +11,78 @@
     <script src="./index.js" defer></script>
 </head>
 
-<body class="center">
+<body class="center" onload="show('basic', 'ALL'); show('elegantFlower', 'ALL'); show('spongebob', 'ALL'); price(0)">
     <div class="container">
         <button class="buttonRec" onclick="reset('white')" id="reset">Reset all nails</button>
+
+        <div class="dropdown">
+            filter by nail:
+            <button class="buttonRec" id="buttonWords"></button>
+            <div class="dropdown-options">
+                <a href='#elegantFlower'
+                    onclick="show('basic', 'ALL'); show('elegantFlower', 'ALL'); show('spongebob', 'ALL')">ALL</a>
+                <a onclick="show('basic', 'Basics'); hide('spongebob','Spongebob'); hide('elegantFlower')">Basics</a>
+                <a onclick="show('elegantFlower','Elegant Flower'); hide('spongebob'); hide('basic')">Elegant Flower</a>
+                <a onclick="show('spongebob','Spongebob'); hide('elegantFlower'); hide('basic')">Spongebob</a>
+            </div>
+        </div>
+
         <h1 center>Nail Swatches</h1>
 
         <p class="subheading">
-            Here we are visually swatching to see what looks good together!
+            Visually swatch to see what looks good together!
         </p>
-        <!-- <div id="image-container">
-            <img id="image" src="./img/logo.png">
+
+        <div id="picker">
+            <p>Change the color: </p>
+            <input type="color" name="favcolor" value="#ffffff" id="color_picker" onchange="setColor(this);" />
         </div>
-          
-        <label for="color-picker">Select a color:</label>
-        <input id="color-picker" type="color"> -->
+
+        <div id="triangle-down"></div>
 
         <div class="row">
             <div class="nails center row">
-                <div class="finger" id="finger1ID"></div>
-                <!-- <div class="dropdown">
-                    <button class="buttonRec">Profile</button>
-                    <div class="dropdown-options">
-                        <a href="#">Dashboard</a>
-                        <a href="#">Setting</a>
-                        <a href="#">Logout</a>
-                    </div>
-                </div> -->
-                <div class="finger" id="finger2ID"></div>
-                <!-- <div class="row">
-                    <button id="triangle"></button>
-                    <div class="label">testing</div>
-                </div> -->
-                <div class="finger" id="finger3ID"></div>
-                <div class="finger" id="finger4ID"></div>
-                <div class="finger" id="finger5ID"></div>
+                <div class="finger" id="finger1ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger2ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger3ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger4ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger5ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
             </div>
         </div>
-        <div class="action">
-            <button class="buttonRec"
-                onclick="finger('https://cdn0.iconfinder.com/data/icons/ie_Bright/128/plus_add_blue.png')">Red</button>
-            <button class="buttonRec"
-                onclick="finger('http://31.media.tumblr.com/fca646cd8fe87906e605ad7e8d039903/tumblr_mmoz4fWT6U1soh1p8o1_500.png')">Green</button>
-            <button class="buttonRec" onclick="finger('./img/logo.png')">Blue</button>
+
+        <div class="price">
+            <p>Price: $<span id="cost"></span></p>
         </div>
-    </div>
 
+        <div class="action" id="basic">
+            <h2>Basics</h2>
+            <img src='./img/frenchTip.png' class="nailChoice" id="nailChoice" id="nailChoice"
+                onclick="isClear(); price(3.5); finger('./img/frenchTip-clear.png')" />
+            <img src='./img/ombre-full.png' class="nailChoice" id="nailChoice" id="nailChoice" onclick="isClear(); price(3.5); finger('./img/ombre.png')" />
+            <img src='./img/half.png' class="nailChoice" id="nailChoice" id="nailChoice" onclick="isClear(); price(3.25); finger('./img/half-clear.png')" />
+            <img src='./img/baseNail.png' class="nailChoice" id="nailChoice" onclick="isClear(); price(3); finger('./img/baseNail-clear.png')" />
+        </div>
 
+        <div class="action" id="elegantFlower">
+            <h2>Elegant Flower</h2>
+            <img src='./img/frenchTipWFlower.png' class="nailChoice" id="nailChoice"
+                onclick="isClear(); price(4); finger('./img/frenchTipsWFlower-clear.png')" />
+            <img src='./img/frenchTipsWFlowers.png' class="nailChoice" id="nailChoice"
+                onclick="isClear(); price(5.5); finger('./img/frenchTipsWFlowers-clear.png')" />
+            <img src='./img/frenchTipsWFlowerRounded.png' class="nailChoice" id="nailChoice"
+                onclick="isClear(); price(5.5); finger('./img/frenchTipsWFlowersRounded-clear.png')" />
+            <img src='./img/frenchTipFlowers.png' class="nailChoice" id="nailChoice"
+                onclick="isClear(); price(5.5); finger('./img/frenchTipFlowers-clear.png')" />
+        </div>
+
+        <div class="action" id="spongebob">
+            <h2>Spongebob</h2>
+            <img src='./img/spongebobFlowers.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/spongebobFlowers.png')" />
+            <img src='./img/spongebobIceCream.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/spongebobIceCream.png')" />
+            <img src='./img/doodlebob.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/doodlebob.png')" />
+            <img src='./img/jellyfish.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/jellyfish.png')" />
+            <img src='./img/plankton.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/plankton.png')" />
+        </div>
     </div>
 </body>
 
