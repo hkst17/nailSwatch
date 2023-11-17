@@ -11,7 +11,7 @@
     <script src="./index.js" defer></script>
 </head>
 
-<body class="center" onload="show('elegantFlower', 'ALL'); show('spongebob', 'ALL')">
+<body class="center" onload="show('basic', 'ALL'); show('elegantFlower', 'ALL'); show('spongebob', 'ALL')">
 
     <!-- <button class="right" onclick="moveright()">right</button> -->
 
@@ -21,19 +21,25 @@
             filter by nail:
             <button class="buttonRec" id="buttonWords"></button>
             <div class="dropdown-options">
-                <a href='#elegantFlower' onclick="show('elegantFlower', 'ALL'); show('spongebob', 'ALL')">ALL</a>
-                <a href='#elegantFlower' onclick="show('elegantFlower','Elegant Flower'); hide('spongebob')">Elegant Flower</a>
-                <a href='#spongebob' onclick="show('spongebob','Spongebob'); hide('elegantFlower')">Spongebob</a>
+                <a href='#elegantFlower'
+                    onclick="show('basic', 'ALL'); show('elegantFlower', 'ALL'); show('spongebob', 'ALL')">ALL</a>
+                <a href='#basic'
+                    onclick="show('basic', 'Basics'); hide('spongebob','Spongebob'); hide('elegantFlower')">Basics</a>
+                <a href='#elegantFlower'
+                    onclick="show('elegantFlower','Elegant Flower'); hide('spongebob'); hide('basic')">Elegant
+                    Flower</a>
+                <a href='#spongebob'
+                    onclick="show('spongebob','Spongebob'); hide('elegantFlower'); hide('basic')">Spongebob</a>
             </div>
         </div>
         <h1 center>Nail Swatches</h1>
 
         <p class="subheading">
-            Here we are visually swatching to see what looks good together!
+            Visually swatch to see what looks good together!
         </p>
 
         <div id="picker">
-            <p>Select a color: </p>
+            <p>Change the color: </p>
             <input type="color" name="favcolor" value="#ffffff" id="color_picker" onchange="setColor(this);" />
         </div>
         <!-- <img src="./img/cowFull.png" alt="./img/cowFull.png" class=""> -->
@@ -45,27 +51,37 @@
 
         <div class="row">
             <div class="nails center row">
-                <div class="finger" id="finger1ID" onchange="setColor(this)"></div>
-                <div class="finger" id="finger2ID" onchange="setColor(this)"></div>
-                <div class="finger" id="finger3ID" onchange="setColor(this)"></div>
-                <div class="finger" id="finger4ID" onchange="setColor(this)"></div>
-                <div class="finger" id="finger5ID" onchange="setColor(this)"></div>
+                <div class="finger" id="finger1ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger2ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger3ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger4ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger5ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
             </div>
         </div>
 
-        
-        <div class="action" id="elegantFlower">
+        <div class="action" id="basic">
+            <h2>Basics</h2>
             <img src='./img/frenchTip.png' class="nailChoice"
                 onclick="isClear(); finger('./img/frenchTip-clear.png')" />
+            <img src='./img/ombre-full.png' class="nailChoice" onclick="isClear(); finger('./img/ombre.png')" />
+            <img src='./img/half.png' class="nailChoice" onclick="isClear(); finger('./img/half-clear.png')" />
+            <img src='./img/baseNail.png' class="nailChoice" onclick="isClear(); finger('./img/baseNail-clear.png')" />
+        </div>
+
+        <div class="action" id="elegantFlower">
+            <h2>Elegant Flower</h2>
             <img src='./img/frenchTipWFlower.png' class="nailChoice"
                 onclick="isClear(); finger('./img/frenchTipsWFlower-clear.png')" />
             <img src='./img/frenchTipsWFlowers.png' class="nailChoice"
                 onclick="isClear(); finger('./img/frenchTipsWFlowers-clear.png')" />
             <img src='./img/frenchTipsWFlowerRounded.png' class="nailChoice"
                 onclick="isClear(); finger('./img/frenchTipsWFlowersRounded-clear.png')" />
+            <img src='./img/frenchTipFlowers.png' class="nailChoice"
+                onclick="isClear(); finger('./img/frenchTipFlowers-clear.png')" />
 
         </div>
         <div class="action" id="spongebob">
+            <h2>Spongebob</h2>
             <img src='./img/spongebobFlowers.png' class="nailChoice" onclick="finger('./img/spongebobFlowers.png')" />
             <img src='./img/spongebobIceCream.png' class="nailChoice" onclick="finger('./img/spongebobIceCream.png')" />
             <img src='./img/doodlebob.png' class="nailChoice" onclick="finger('./img/doodlebob.png')" />
@@ -73,7 +89,7 @@
             <img src='./img/plankton.png' class="nailChoice" onclick="finger('./img/plankton.png')" />
         </div>
     </div>
-    
+
 
     </div>
 </body>
