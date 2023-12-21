@@ -47,9 +47,9 @@ function reset(color) { // reset all nails
 function resetNail() {  // reset one by one
     const finger = document.getElementById('finger' + num + 'ID');
     finger.style = `background-color:white`;
-    numDesign--;
     document.getElementById('finger' + num + 'ID').style = 'none';
     document.getElementById('price').style.display = 'none';
+    numDesign--;
 }
 
 function moveright() {
@@ -65,6 +65,18 @@ function show(nailSet, name) {  // for the dropdown
 function hide(nailSet) {    // also for dropdown
     const nail = document.getElementById(`${nailSet}`);
     nail.style.display = "none";
+}
+
+
+function setColor(color) {  // color changing ability of nails
+    let image = [];
+
+    for (let i = 1; i < 6; i++) {
+        image[i] = document.getElementById('finger' + i + 'ID');
+        image[i].style.backgroundColor = color.value;
+    }
+
+    return image;
 }
 
 function isClear() {    // if there is a clear design nail in the set
