@@ -11,7 +11,8 @@
     <script src="./index.js" defer></script>
 </head>
 
-<body class="center" onload="show('basic', 'ALL'); show('elegantFlower', 'ALL'); show('spongebob', 'ALL'); price(0)">
+<body class="center"
+    onload="show('basic', 'ALL'); show('elegantFlower', 'ALL'); show('spongebob', 'ALL'); show('winter', 'ALL'); price(0)">
     <div class="container">
         <button class="buttonRec" onclick="reset('white')" id="reset">Reset all nails</button>
 
@@ -20,10 +21,15 @@
             <button class="buttonRec" id="buttonWords"></button>
             <div class="dropdown-options">
                 <a href='#elegantFlower'
-                    onclick="show('basic', 'ALL'); show('elegantFlower', 'ALL'); show('spongebob', 'ALL')">ALL</a>
-                <a onclick="show('basic', 'Basics'); hide('spongebob','Spongebob'); hide('elegantFlower')">Basics</a>
-                <a onclick="show('elegantFlower','Elegant Flower'); hide('spongebob'); hide('basic')">Elegant Flower</a>
-                <a onclick="show('spongebob','Spongebob'); hide('elegantFlower'); hide('basic')">Spongebob</a>
+                    onclick="show('basic', 'ALL'); show('elegantFlower', 'ALL'); show('spongebob', 'ALL'); show('winter', 'ALL')">ALL</a>
+                <a
+                    onclick="show('basic', 'Basics'); hide('spongebob','Spongebob'); hide('elegantFlower'); hide('winter')">Basics</a>
+                <a onclick="show('elegantFlower','Elegant Flower'); hide('spongebob'); hide('basic'); hide('winter')">Elegant
+                    Flower</a>
+                <a
+                    onclick="show('spongebob','Spongebob'); hide('elegantFlower'); hide('basic'); hide('winter')">Spongebob</a>
+                <a
+                    onclick="show('winter', 'Winter'); hide('spongebob','Spongebob'); hide('elegantFlower'); hide('basic')">Winter</a>
             </div>
         </div>
 
@@ -42,15 +48,15 @@
 
         <div class="row">
             <div class="nails center row">
-                <div class="finger" id="finger1ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
-                <div class="finger" id="finger2ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
-                <div class="finger" id="finger3ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
-                <div class="finger" id="finger4ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
-                <div class="finger" id="finger5ID" onchange="setColor(this)" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger1ID" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger2ID" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger3ID" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger4ID" onclick="clickHandler(this.id)"></div>
+                <div class="finger" id="finger5ID" onclick="clickHandler(this.id)"></div>
             </div>
         </div>
 
-        <div class="price">
+        <div class="price" id="price">
             <p>Price: $<span id="cost"></span></p>
         </div>
 
@@ -58,9 +64,12 @@
             <h2>Basics</h2>
             <img src='./img/frenchTip.png' class="nailChoice" id="nailChoice" id="nailChoice"
                 onclick="isClear(); price(3.5); finger('./img/frenchTip-clear.png')" />
-            <img src='./img/ombre-full.png' class="nailChoice" id="nailChoice" id="nailChoice" onclick="isClear(); price(3.5); finger('./img/ombre.png')" />
-            <img src='./img/half.png' class="nailChoice" id="nailChoice" id="nailChoice" onclick="isClear(); price(3.25); finger('./img/half-clear.png')" />
-            <img src='./img/baseNail.png' class="nailChoice" id="nailChoice" onclick="isClear(); price(3); finger('./img/baseNail-clear.png')" />
+            <img src='./img/ombre-full.png' class="nailChoice" id="nailChoice" id="nailChoice"
+                onclick="isClear(); price(3.5); finger('./img/ombre.png')" />
+            <img src='./img/half.png' class="nailChoice" id="nailChoice" id="nailChoice"
+                onclick="isClear(); price(3.25); finger('./img/half-clear.png')" />
+            <img src='./img/baseNail.png' class="nailChoice" id="nailChoice"
+                onclick="isClear(); price(3); finger('./img/baseNail-clear.png')" />
         </div>
 
         <div class="action" id="elegantFlower">
@@ -77,19 +86,28 @@
 
         <div class="action" id="spongebob">
             <h2>Spongebob</h2>
-            <img src='./img/spongebobFlowers.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/spongebobFlowers.png')" />
-            <img src='./img/spongebobIceCream.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/spongebobIceCream.png')" />
-            <img src='./img/doodlebob.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/doodlebob.png')" />
-            <img src='./img/jellyfish.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/jellyfish.png')" />
-            <img src='./img/plankton.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/plankton.png')" />
+            <img src='./img/spongebobFlowers.png' class="nailChoice" id="nailChoice"
+                onclick="price(9); finger('./img/spongebobFlowers.png')" />
+            <img src='./img/spongebobIceCream.png' class="nailChoice" id="nailChoice"
+                onclick="price(9); finger('./img/spongebobIceCream.png')" />
+            <img src='./img/doodlebob.png' class="nailChoice" id="nailChoice"
+                onclick="price(9); finger('./img/doodlebob.png')" />
+            <img src='./img/jellyfish.png' class="nailChoice" id="nailChoice"
+                onclick="price(9); finger('./img/jellyfish.png')" />
+            <img src='./img/plankton.png' class="nailChoice" id="nailChoice"
+                onclick="price(9); finger('./img/plankton.png')" />
         </div>
 
         <div class="action" id="winter">
             <h2>Winter</h2>
-            <img src='./img/winterBear.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/winterBear.png')" />
-            <img src='./img/winterHeart.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/winterHeart.png')" />
-            <img src='./img/winterFrench.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/winterFrench.png')" />
-            <img src='./img/winterSnowman.png' class="nailChoice" id="nailChoice" onclick="price(9); finger('./img/winterSnowman.png')" />
+            <img src='./img/winterBear.png' class="nailChoice" id="nailChoice"
+                onclick="price(9); finger('./img/winterBear.png')" />
+            <img src='./img/winterHeart.png' class="nailChoice" id="nailChoice"
+                onclick="price(9); finger('./img/winterHeart.png')" />
+            <img src='./img/winterFrench.png' class="nailChoice" id="nailChoice"
+                onclick="price(9); finger('./img/winterFrench.png')" />
+            <img src='./img/winterSnowman.png' class="nailChoice" id="nailChoice"
+                onclick="price(9); finger('./img/winterSnowman.png')" />
         </div>
     </div>
 </body>
