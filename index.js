@@ -10,7 +10,7 @@ document.getElementById('price').style.display = 'none';
 function finger(img) {
     const finger = document.getElementById('finger' + num + 'ID');
 
-    if (finger.style.backgroundImage == '') {   // if nail is empty then...
+    if (finger.style.backgroundImage == '' || 'url("./img/emptyNail.png")') {   // if nail is empty then...
 
         if (numDesign == 4) {   // if designs are chosen hide triangle and don't update price (so it won't spam update at the end)
             triangle.style.visibility = 'hidden';
@@ -40,14 +40,14 @@ function reset(color) { // reset all nails
     colorPicker.style.display = "none";
 
     for (let i = 1; i < 6; i++) {
-        document.getElementById('finger' + i + 'ID').style = `background-color:${color}`;
+        document.getElementById('finger' + i + 'ID').style = `background-image:  url('./img/emptyNail.png')`;
     }
 }
 
 function resetNail() {  // reset one by one
     const finger = document.getElementById('finger' + num + 'ID');
-    finger.style = `background-color:white`;
-    document.getElementById('finger' + num + 'ID').style = 'none';
+    finger.style = `background-image:  url('./img/emptyNail.png')`;
+    // document.getElementById('finger' + num + 'ID').style = 'none';
     document.getElementById('price').style.display = 'none';
     numDesign--;
 }
@@ -131,11 +131,12 @@ function price(amount) {
     finger.dataset.value = amount;
 }
 
-// function testCheck() {
-//     console.log("num: " + num);
-//     console.log("numDesign: " + numDesign);
-// }
+function testCheck() {
+    console.log("num: " + num);
+    console.log("numDesign: " + numDesign);
+    console.log("bkrd img: "+document.getElementById('finger1ID').style.backgroundImage);
+}
 
 setInterval(alwaysRunning, 100);
 
-// setInterval(testCheck, 5000);
+setInterval(testCheck, 5000);

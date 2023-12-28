@@ -37,6 +37,7 @@
 .buttonRec {
     cursor: pointer;
     background-color: #FD91CF;
+    /* font-family: 'More Sugar Thin', sans-serif; */
     font-family: 'More Sugar', sans-serif;
     font-size: 20px;
     width: max-content;
@@ -76,6 +77,8 @@
 }
 
 .finger {
+    
+    background-image: url('./img/emptyNail.png');
     background-color: white;
     border: 1px solid #000000;
     width: 100px;
@@ -145,6 +148,7 @@ button:hover {
 h1 {
     font-family: 'More Sugar', sans-serif;
     font-size: 50px;
+    font-variant: petite-caps;
     margin-bottom: -10px;
     margin-top: -10px;
 }
@@ -161,6 +165,7 @@ p {
 body {
     background-color: white;
     font-family: 'More Sugar', sans-serif;
+    /* font-family: 'More Sugar Thin', sans-serif; */
     text-align: center;
     color: white;
     align-content: center;
