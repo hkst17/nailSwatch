@@ -15,7 +15,7 @@
     onload="show('basic', 'ALL'); show('elegantFlower', 'ALL'); show('spongebob', 'ALL'); show('winter', 'ALL'); price(0)">
     <div class="container">
         <button class="buttonRec" onclick="reset('white')" id="reset">Reset all nails</button>
-
+        <button class="dot">?</button>
         <div class="dropdown">
             filter by nail:
             <button class="buttonRec" id="buttonWords"></button>
@@ -40,13 +40,15 @@
         </p>
 
         <div id="picker">
-            <p>Change the color: </p>
-            <input type="color" name="favcolor" value="#ffffff" id="color_picker" onchange="setColor(this);" />
+            <p>Change the color of all nails: </p>
+            <input type="color" name="favcolor" value="#ffffff" id="color_picker1" onchange="setColor(this);" />
+            
         </div>
-
+        <div id="indQ"><br>You are changing the individual nail 
+            <button class="buttonRec" id="designOrColor">Design</button></div>
         <div id="triangle-down"></div>
 
-        <div class="row">
+        <div class="row" id="row">
             <div class="nails center row">
                 <div class="finger" id="finger1ID" img src='./img/emptyNail.png' onchange="setColor(this)"
                     onclick="clickHandler(this.id)"></div>
@@ -59,6 +61,10 @@
                 <div class="finger" id="finger5ID" img src='./img/emptyNail.png' onchange="setColor(this)"
                     onclick="clickHandler(this.id)"></div>
             </div>
+        </div>
+
+        <div id="pickerInd">
+            <input type="color" name="favcolor" value="#ffffff" id="pickerInd" onchange="setColor(this);" />
         </div>
 
         <div class="price" id="price">

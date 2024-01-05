@@ -47,6 +47,21 @@
     margin: 5px;
 }
 
+.dot {
+    cursor: pointer;
+    font-family: 'More Sugar', sans-serif;
+    font-size: medium;
+    color: white;
+    height: 30px;
+    width: 30px;
+    background-color: #FD91CF;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    left: -360px;
+    /* bottom: -5px; */
+  }
+
 .nailChoice {
     position: static;
     scale: 65%;
@@ -63,12 +78,13 @@
 .row {
     display: flex;
     width: max-content;
-    margin-top: 40px;
+    /* margin-top: -60px; */
     margin-bottom: 55px;
 }
 
 .nails {
     margin: -50px;
+    margin-top: -20px;
     display: inline-block;
     flex-direction: row;
     position: relative;
@@ -113,20 +129,29 @@
 #reset {
     width: fit-content;
     position: relative;
-    right: -400px;
-    scale: 80%;
+    right: -450px;
+    scale: 85%;
 }
 
 #picker {
     display: none;
-    margin-bottom: -50px;
+    position: relative;
+    /* bottom: -40px; */
+    /* left: 25px; */
+    /* left: -257px; */
+    /* left: 25px; 25 is middle */
+    margin-bottom: -30px;
 }
 
-#color_picker {
-    position: relative;
+#color_picker1 {
+    /* position: relative;
     bottom: -17px;
-    right: -10px;
+    right: -10px; */
+    position: relative;
+    left: 5px;
+    bottom: -15px;
 }
+
 
 #triangle-down {
     width: 0;
@@ -138,6 +163,24 @@
     top: 225px;
     right: 970px;
     position: absolute;
+}
+
+#designOrColor {
+    position: relative;
+    /* visibility: hidden; */
+    /* right:0px; */
+}
+
+#pickerInd {
+    position: relative;
+    /* left: -283px; */
+    top: -25px;
+    /* visibility: hidden; */
+}
+
+#indQ {
+    left: 7px;
+    position: relative;
 }
 
 button:hover {
