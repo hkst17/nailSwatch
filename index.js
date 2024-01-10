@@ -14,8 +14,34 @@ pickerInd.style.visibility = 'hidden';
 const indQ = document.getElementById('indQ');
 indQ.style.display = 'none';
 
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("dot");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
 designOrColorText.addEventListener("click", function () {
     if (designOrColorText.textContent == "Design") {
+
         designOrColorText.textContent = "Color";
         designOrColorBool = false;
         colorPicker1.style.display = "none";
@@ -32,6 +58,13 @@ designOrColorText.addEventListener("click", function () {
     }
 });
 
+function buttonAlert() {
+    if (document.getElementById("designOrColor").disabled == true) {
+
+        alert("Please select a style for this nail first");
+    }
+}
+
 function finger(img) {
     const finger = document.getElementById('finger' + num + 'ID');
 
@@ -43,11 +76,16 @@ function finger(img) {
             document.getElementById('cost').innerText = price1;
             document.getElementById('price').style.display = 'block';
             document.getElementById('row').style.marginTop = "20px";
-            if (clear>0) {
+            if (clear > 0) {
                 indQ.style.display = 'block';
                 colorPicker1.style.display = "inline-flex";
             }
-
+            else {
+                if (clear == 0) {
+                    indQ.style.display = 'none';
+                    colorPicker1.style.display = "none";
+                }
+            }
 
         }
 
@@ -55,6 +93,9 @@ function finger(img) {
             finger.style = `background-image: url(${img})`;
             numDesign++;
             num++;
+            document.getElementById("designOrColor").disabled = false;
+            document.getElementById("designOrColor").style.backgroundColor = '#FD91CF';
+            document.getElementById("invisibleButton").style.display = "none";
             moveright();
         }
     }
@@ -82,6 +123,14 @@ function resetNail() {  // reset one by one
     // document.getElementById('finger' + num + 'ID').style = 'none';
     document.getElementById('price').style.display = 'none';
     numDesign--;
+    if (isNailClear == true && clear > 0) {
+        clear--;
+        if (numDesign == 4) {
+            document.getElementById("designOrColor").disabled = true;
+            document.getElementById("designOrColor").style.backgroundColor = 'grey';
+            document.getElementById("invisibleButton").style.display = "block";
+        }
+    }
 }
 
 function moveright() {
@@ -131,10 +180,10 @@ function isClear() {    // if there is a clear design nail in the set
 
 function clickHandler(clicked_id) { // resetting specific nail after all designs are chosen
 
-    if (numDesign == 5 && designOrColorBool == true) {
+    if ((numDesign == 5 && designOrColorBool == true) || (numDesign == 5 && clear == 0)) {
 
         triangle.style.visibility = 'visible';
-        triangle.style.top = '320px';
+        triangle.style.top = '340px';
         if (clicked_id == 'finger1ID') {
             triangle.style.left = '404px';
             num = 1;
@@ -155,15 +204,12 @@ function clickHandler(clicked_id) { // resetting specific nail after all designs
             triangle.style.left = '968px';
             num = 5;
         }
-        // if(designOrColorBool == false){
-        //     resetNail();
-        // }
         resetNail();
     }
     else {
         if (numDesign == 5 && designOrColorBool == false) {
             pickerInd.style.display = "inline-flex";
-            triangle.style.top = '285px';
+            triangle.style.top = '340px';
             triangle.style.visibility = 'visible';
             pickerInd.style.visibility = "visible";
             if (clicked_id == 'finger1ID') {
@@ -218,6 +264,7 @@ function testCheck() {
     console.log("numDesign: " + numDesign);
     console.log("bkrd img: " + document.getElementById('finger1ID').style.backgroundImage);
     console.log("design or color text: " + designOrColorText.textContent);
+    console.log("clear: " + clear);
 }
 
 setInterval(alwaysRunning, 100);
