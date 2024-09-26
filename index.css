@@ -1,8 +1,14 @@
+.header {
+    /* position: static; */
+    display: flex;
+    justify-content: space-around;
+}
+
 .dropdown {
     display: inline-block;
     position: relative;
     margin-top: 20px;
-    left: -65px;
+    /* left: -65px; */
     top: -35px;
 }
 
@@ -34,6 +40,8 @@
     border-radius: 5px;
 }
 
+
+
 .buttonRec {
     cursor: pointer;
     background-color: #FD91CF;
@@ -56,11 +64,12 @@
     width: 30px;
     background-color: #FD91CF;
     border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    left: -360px;
+    
+    /* display: block;
+    position: static; */
+    /* left: -360px; */
     /* bottom: -5px; */
-  }
+}
 
 .nailChoice {
     position: static;
@@ -73,10 +82,11 @@
     margin-top: 25px;
     padding: 50px;
     height: max-content;
+    width: 1100px;
 }
 
 .row {
-    display: flex;
+    display: inline-block;
     width: max-content;
     /* margin-top: -60px; */
     /* margin-bottom: 55px; */
@@ -90,10 +100,11 @@
     position: relative;
     scale: 70%;
     width: fit-content;
+
 }
 
 .finger {
-    
+
     background-image: url('./img/emptyNail.png');
     background-color: white;
     border: 1px solid #000000;
@@ -127,10 +138,13 @@
 }
 
 #reset {
-    width: fit-content;
-    position: relative;
-    right: -450px;
+    /* width: fit-content; */
+    /* position: static;
+    display: block; */
+    /* right: -450px; */
+    
     scale: 85%;
+    
 }
 
 #picker {
@@ -160,7 +174,7 @@
     border-right: 25px solid transparent;
     border-top: 50px solid #FD91CF;
     scale: 50%;
-    top: 225px;
+    top: 250px;
     right: 970px;
     position: absolute;
 }
@@ -173,8 +187,8 @@
 
 #pickerInd {
     position: relative;
-    /* left: -283px; */
-    /* top: -25px; */
+    left: 58px; 
+    top: -15px;
     /* visibility: hidden; */
 }
 
@@ -186,10 +200,10 @@
 #invisibleButton {
     display: none;
     opacity: 0%;
-    width: 76px;
+    width: 68px;
     height: 30px;
     position: absolute;
-    right: 287px;
+    right: 204px;
     top: 24px;
 }
 
@@ -200,8 +214,8 @@ button:hover {
 
 h1 {
     font-family: 'More Sugar', sans-serif;
-    font-size: 50px;
-    font-variant: petite-caps;
+    font-size: 45px;
+    /* font-variant: petite-caps; */
     margin-bottom: -10px;
     margin-top: -10px;
 }

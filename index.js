@@ -3,11 +3,11 @@ let numDesign = 0;  // tracker of which nails already have designs on them
 let clear = 0;  // if nail design clear is included
 let price1 = 0; // total price of set
 let isNailClear = false;
-let designOrColorBool = true; // design is picked auto
+let designBool = true; // design is picked auto
+let colorBool = false;
 // let priceOfNail = finger.dataset.value;  // price of each nail
 const triangle = document.getElementById('triangle-down');
 const colorPicker1 = document.getElementById('picker');
-const designOrColorText = document.querySelector("#designOrColor")
 const pickerInd = document.getElementById('pickerInd');
 document.getElementById('price').style.display = 'none';
 pickerInd.style.visibility = 'hidden';
@@ -39,36 +39,74 @@ indQ.style.display = 'none';
 //     }
 // }
 
-designOrColorText.addEventListener("click", function () {
-    if (designOrColorText.textContent == "Design") {
-        color();
-    }
-    else {
-        design();
-    }
-});
+// designOrColorText.addEventListener("click", function () {
+//     if (designOrColorText.textContent == "Design") {
+//         color();
+//     }
+//     else {
+//         design();
+//     }
+// });
 
-function design() {
-    designOrColorText.textContent = "Design";
-    // colorPicker1.style.visibility = 'hidden';
-    pickerInd.style.visibility = "hidden";
-    // colorPicker1.style.visibility = "hidden";
-    colorPicker1.style.display = "inline-flex";
-    designOrColorBool = true;
-    triangle.style.visibility = 'hidden';
-}
+// function design() {
+//     designOrColorText.textContent = "Design";
+//     pickerInd.style.visibility = "hidden";
+//     colorPicker1.style.display = "inline-flex";
+//     designOrColorBool = true;
+//     triangle.style.visibility = 'hidden';
+// }
 
-function color() {
-    designOrColorText.textContent = "Color";
-    designOrColorBool = false;
-    colorPicker1.style.display = "none";
-}
+// function color() {
+//     designOrColorText.textContent = "Color";
+//     designOrColorBool = false;
+//     colorPicker1.style.display = "none";
+// }
 
 function buttonAlert() {
-    if (document.getElementById("designOrColor").disabled == true) {
-        alert("Please select a style for this nail first");
-    }
+    // if (document.getElementById("color").disabled == true) {
+    //     alert("Please select a style for this nail first");
+    // }
+    alert("Please select a style for this nail first");
+    // if(document.getElementById("color").style.disabled == true){
+    //     document.getElementById("invisibleButton").style.right = '234px';
+    // }
+    // else{
+    //     document.getElementById("invisibleButton").style.right = '320px';
+    // }
 }
+
+design.addEventListener("click", function () {
+    document.getElementById("color").style.backgroundColor = 'grey';
+    designBool = true;
+    colorBool = false;
+    pickerInd.style.visibility = "hidden";
+    colorPicker1.style.display = "inline-flex";
+    triangle.style.visibility = 'hidden';
+    document.getElementById('dropdown').style.display = 'inline-block';
+    document.getElementById('nailSetContainer').style.display = 'block';
+    // document.getElementById("color").disabled = true;
+    // document.getElementById("invisibleButton").style.right = '234px';
+    if (document.getElementById("design").style.backgroundColor = 'grey') {
+        document.getElementById("design").style.backgroundColor = '#FD91CF';
+    }
+
+    console.log("you clicked design");
+});
+
+color.addEventListener("click", function () {
+    designBool = false;
+    colorBool = true;
+    document.getElementById('dropdown').style.display = 'none';
+    document.getElementById("design").style.backgroundColor = 'grey';
+    colorPicker1.style.display = "none";
+    // document.getElementById("design").disabled = true;
+    // document.getElementById("invisibleButton").style.right = '320px';
+    document.getElementById('nailSetContainer').style.display = 'none';
+    if (document.getElementById("color").style.backgroundColor = 'grey') {
+        document.getElementById("color").style.backgroundColor = '#FD91CF';
+    }
+    console.log("you clicked color");
+});
 
 function finger(img) {
     const finger = document.getElementById('finger' + num + 'ID');
@@ -81,13 +119,14 @@ function finger(img) {
             document.getElementById('cost').innerText = price1;
             document.getElementById('price').style.display = 'block';
             document.getElementById('row').style.marginTop = "20px";
+
             if (clear > 0) {
                 indQ.style.display = 'block';
                 colorPicker1.style.display = "inline-flex";
             }
             else {
                 if (clear == 0) {
-                    indQ.style.display = 'none';
+                    indQ.style.display = 'none';    // fix here
                     colorPicker1.style.display = "none";
                 }
             }
@@ -98,9 +137,12 @@ function finger(img) {
             finger.style = `background-image: url(${img})`;
             numDesign++;
             num++;
-            document.getElementById("designOrColor").disabled = false;
-            document.getElementById("designOrColor").style.backgroundColor = '#FD91CF';
+            // document.getElementById("design").disabled = false;
+            document.getElementById("design").style.backgroundColor = '#FD91CF';
             document.getElementById("invisibleButton").style.display = "none";
+            // document.getElementById("color").disabled = true;
+            document.getElementById("color").style.backgroundColor = 'grey';
+
             moveright();
         }
     }
@@ -111,14 +153,15 @@ function reset(color) { // reset all nails
     numDesign = 0;
     clear = 0;
     document.getElementById('price').style.display = 'none';
-    // colorPicker1.style.display = "none";
+    document.getElementById('nailSetContainer').style.display = 'block';
+    isNailClear = false;
+    colorPicker1.style.display = "none";
     pickerInd.style.display = "none";
     indQ.style.display = "none";
-    design();
     document.getElementById('picker').style.display = 'none';
     triangle.style.visibility = 'visible';
     triangle.style.left = '404px';
-    triangle.style.top = '225px';
+    triangle.style.top = '270px';
     for (let i = 1; i < 6; i++) {
         document.getElementById('finger' + i + 'ID').style = `background-image:  url('./img/emptyNail.png')`;
     }
@@ -126,16 +169,24 @@ function reset(color) { // reset all nails
 
 function resetNail() {  // reset one by one
     const finger = document.getElementById('finger' + num + 'ID');
+    console.log(finger);
+    triangle.style.top = '370px';
     finger.style = `background-image:  url('./img/emptyNail.png')`;
     // document.getElementById('finger' + num + 'ID').style = 'none';
     document.getElementById('price').style.display = 'none';
     numDesign--;
-    if (isNailClear == true && clear > 0) {
-        clear--;
+    document.getElementById("invisibleButton").style.display = 'block';
+    
+    if (isNailClear == true) {
+        if(finger.clickHandler.onclick == "isClear()"){
+            clear--;
+            console.log("yes");
+        }
+        // clear--;
         if (numDesign == 4) {
-            document.getElementById("designOrColor").disabled = true;
-            document.getElementById("designOrColor").style.backgroundColor = 'grey';
-            document.getElementById("invisibleButton").style.display = "block";
+            // document.getElementById("color").disabled = true;
+            document.getElementById("color").style.backgroundColor = 'grey';
+            // document.getElementById("invisibleButton").style.display = "block";
         }
     }
 }
@@ -160,7 +211,7 @@ function hide(nailSet) {    // also for dropdown
 function setColor(color) {  // color changing ability of nails
     let image = [];
 
-    if (designOrColorBool == true && numDesign >= 5) {
+    if (designBool == true && numDesign >= 5) {
         for (let i = 1; i < 6; i++) {
             image[i] = document.getElementById('finger' + i + 'ID');
             image[i].style.backgroundColor = color.value;
@@ -169,25 +220,27 @@ function setColor(color) {  // color changing ability of nails
         return image;
     }
     else {
-        if (isNailClear == true && designOrColorBool == false && numDesign == 5) {
+        if (isNailClear == true && colorBool == true && numDesign == 5) {
             image = document.getElementById('finger' + num + 'ID');
             image.style.backgroundColor = color.value;
         }
     }
-
-
-
-
 }
 
 function isClear() {    // if there is a clear design nail in the set
-    clear += 1;
-    isNailClear = true;
+    // if (document.getElementsByClassName("finger").style.backgroundImage == '' || 'url("./img/emptyNail.png")') {
+    //     clear += 1;
+    //     isNailClear = true;
+    // }
+    if (clear < 5 && numDesign != 5) {
+        clear++;
+    }
+
 }
 
 function clickHandler(clicked_id) { // resetting specific nail after all designs are chosen
 
-    if ((numDesign == 5 && designOrColorBool == true) || (numDesign == 5 && clear == 0)) {
+    if ((numDesign == 5 && designBool == true) || (numDesign == 5 && clear == 0)) {
 
         triangle.style.visibility = 'visible';
         triangle.style.top = '340px';
@@ -214,34 +267,34 @@ function clickHandler(clicked_id) { // resetting specific nail after all designs
         resetNail();
     }
     else {
-        if (numDesign == 5 && designOrColorBool == false) {
-            pickerInd.style.display = "inline-flex";
-            triangle.style.top = '340px';
-            triangle.style.visibility = 'visible';
+        if (numDesign == 5 && colorBool == true) {
+            pickerInd.style.display = "flex";
+            // triangle.style.top = '340px';
+            triangle.style.visibility = 'none';
             pickerInd.style.visibility = "visible";
             if (clicked_id == 'finger1ID') {
-                pickerInd.style.left = '-283px';
-                triangle.style.left = '404px';
+                pickerInd.style.left = '185px';
+                // triangle.style.left = '404px';
                 num = 1;
             }
             if (clicked_id == 'finger2ID') {
-                pickerInd.style.left = '-142px';
-                triangle.style.left = '545px';
+                pickerInd.style.left = '326px';
+                // triangle.style.left = '545px';
                 num = 2;
             }
             if (clicked_id == 'finger3ID') {
-                pickerInd.style.left = '-1px';
-                triangle.style.left = '686px';
+                pickerInd.style.left = '467px';
+                // triangle.style.left = '686px';
                 num = 3;
             }
             if (clicked_id == 'finger4ID') {
-                pickerInd.style.left = '140px';
-                triangle.style.left = '827px';
+                pickerInd.style.left = '608px';
+                // triangle.style.left = '827px';
                 num = 4;
             }
             if (clicked_id == 'finger5ID') {
-                pickerInd.style.left = '281px';
-                triangle.style.left = '968px';
+                pickerInd.style.left = '749px';
+                // triangle.style.left = '968px';
                 num = 5;
             }
         }
@@ -249,16 +302,15 @@ function clickHandler(clicked_id) { // resetting specific nail after all designs
 }
 
 function alwaysRunning() {
-    // if (clear > 0 && num > 5) { // if clear nail is in set & set is finished
-    //     // if (clear > 0) { // if clear nail is in set & set is finished
-    //     // colorPicker1.style.display = "inline-flex";
-    // }
-    // if (colorPicker1.style.display == "inline-flex") {   // based on if the color picker is shown, position triangle in the correct position
-    //     // triangle.style.top = '270px';
-    // }
-    // if (colorPicker1.style.display == "none") {  // same as above
-    //     // triangle.style.top = '225px';
-    // }
+    if (clear == 0) {
+        isNailClear = false;
+    }
+    else {
+        if (clear > 0 && clear <= 5) {
+            isNailClear = true;
+        }
+    }
+
 }
 
 function price(amount) {
@@ -269,11 +321,9 @@ function price(amount) {
 function testCheck() {
     console.log("num: " + num);
     console.log("numDesign: " + numDesign);
-    console.log("bkrd img: " + document.getElementById('finger1ID').style.backgroundImage);
-    console.log("design or color text: " + designOrColorText.textContent);
-    console.log("design or color text: " + designOrColorBool);
     console.log("clear: " + clear);
     console.log("is clear: " + isNailClear);
+    console.log(designBool);
 }
 
 setInterval(alwaysRunning, 100);
