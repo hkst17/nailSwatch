@@ -160,8 +160,8 @@ function reset(color) { // reset all nails
     indQ.style.display = "none";
     document.getElementById('picker').style.display = 'none';
     triangle.style.visibility = 'visible';
-    triangle.style.left = '404px';
-    triangle.style.top = '270px';
+    triangle.style.left = '125px';
+    // triangle.style.top = '60px';
     for (let i = 1; i < 6; i++) {
         document.getElementById('finger' + i + 'ID').style = `background-image:  url('./img/emptyNail.png')`;
     }
@@ -170,7 +170,7 @@ function reset(color) { // reset all nails
 function resetNail() {  // reset one by one
     const finger = document.getElementById('finger' + num + 'ID');
     console.log(finger);
-    triangle.style.top = '370px';
+    // triangle.style.top = '60px';
     finger.style = `background-image:  url('./img/emptyNail.png')`;
     // document.getElementById('finger' + num + 'ID').style = 'none';
     document.getElementById('price').style.display = 'none';
@@ -192,7 +192,7 @@ function resetNail() {  // reset one by one
 }
 
 function moveright() {
-    triangle.style.left = `${triangle.offsetLeft + 141}px`;
+    triangle.style.left = `${triangle.offsetLeft+202}px`;
     // colorPicker1.style.left = `${colorPicker1.offsetLeft + -500}px`;
 }
 
@@ -243,25 +243,26 @@ function clickHandler(clicked_id) { // resetting specific nail after all designs
     if ((numDesign == 5 && designBool == true) || (numDesign == 5 && clear == 0)) {
 
         triangle.style.visibility = 'visible';
-        triangle.style.top = '340px';
+        //triangle.style.top = '40px';
         if (clicked_id == 'finger1ID') {
-            triangle.style.left = '404px';
+            // moveright();
+            triangle.style.left = '125px';
             num = 1;
         }
         if (clicked_id == 'finger2ID') {
-            triangle.style.left = '545px';
+            triangle.style.left = '327px';
             num = 2;
         }
         if (clicked_id == 'finger3ID') {
-            triangle.style.left = '686px';
+            triangle.style.left = '529px';
             num = 3;
         }
         if (clicked_id == 'finger4ID') {
-            triangle.style.left = '827px';
+            triangle.style.left = '731px';
             num = 4;
         }
         if (clicked_id == 'finger5ID') {
-            triangle.style.left = '968px';
+            triangle.style.left = '933px';
             num = 5;
         }
         resetNail();

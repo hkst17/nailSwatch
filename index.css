@@ -174,10 +174,14 @@
     border-right: 25px solid transparent;
     border-top: 50px solid #FD91CF;
     scale: 50%;
-    top: 250px;
-    right: 970px;
-    position: absolute;
+    top: -150px; 
+    right: -125px;
+    position: relative;
+    /* display: flex;
+    align-items: start; */
 }
+
+
 
 #designOrColor {
     position: relative;
