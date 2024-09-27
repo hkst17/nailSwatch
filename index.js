@@ -79,11 +79,12 @@ design.addEventListener("click", function () {
     document.getElementById("color").style.backgroundColor = 'grey';
     designBool = true;
     colorBool = false;
+    pickerInd.style.display = "none";
     pickerInd.style.visibility = "hidden";
     colorPicker1.style.display = "inline-flex";
     triangle.style.visibility = 'hidden';
     document.getElementById('dropdown').style.display = 'inline-block';
-    document.getElementById('nailSetContainer').style.display = 'block';
+    document.getElementById('nailSetContainer').style.display = 'inline-block';
     // document.getElementById("color").disabled = true;
     // document.getElementById("invisibleButton").style.right = '234px';
     if (document.getElementById("design").style.backgroundColor = 'grey') {
@@ -96,6 +97,7 @@ design.addEventListener("click", function () {
 color.addEventListener("click", function () {
     designBool = false;
     colorBool = true;
+
     document.getElementById('dropdown').style.display = 'none';
     document.getElementById("design").style.backgroundColor = 'grey';
     colorPicker1.style.display = "none";
@@ -126,7 +128,7 @@ function finger(img) {
             }
             else {
                 if (clear == 0) {
-                    indQ.style.display = 'none';    // fix here
+                    //indQ.style.display = 'none';    // fix here
                     colorPicker1.style.display = "none";
                 }
             }
@@ -135,6 +137,7 @@ function finger(img) {
 
         if (numDesign < 5) {
             finger.style = `background-image: url(${img})`;
+            // indQ.style.left = '44px';
             numDesign++;
             num++;
             // document.getElementById("design").disabled = false;
@@ -152,6 +155,9 @@ function reset(color) { // reset all nails
     num = 1;
     numDesign = 0;
     clear = 0;
+    designBool = true;
+    colorBool = false;
+    document.getElementById('dropdown').style.display = 'inline-block';
     document.getElementById('price').style.display = 'none';
     document.getElementById('nailSetContainer').style.display = 'block';
     isNailClear = false;
@@ -175,7 +181,7 @@ function resetNail() {  // reset one by one
     // document.getElementById('finger' + num + 'ID').style = 'none';
     document.getElementById('price').style.display = 'none';
     numDesign--;
-    document.getElementById("invisibleButton").style.display = 'block';
+    document.getElementById("invisibleButton").style.display = 'inline-block';
     
     if (isNailClear == true) {
         if(finger.clickHandler.onclick == "isClear()"){
@@ -210,7 +216,7 @@ function hide(nailSet) {    // also for dropdown
 
 function setColor(color) {  // color changing ability of nails
     let image = [];
-
+    // colorPicker1.style.display = "inline-flex";
     if (designBool == true && numDesign >= 5) {
         for (let i = 1; i < 6; i++) {
             image[i] = document.getElementById('finger' + i + 'ID');
@@ -239,9 +245,10 @@ function isClear() {    // if there is a clear design nail in the set
 }
 
 function clickHandler(clicked_id) { // resetting specific nail after all designs are chosen
-
+    // indQ.style.left = '35px';
     if ((numDesign == 5 && designBool == true) || (numDesign == 5 && clear == 0)) {
-
+        
+        document.getElementById('nailSetContainer').style.position = 'static';
         triangle.style.visibility = 'visible';
         //triangle.style.top = '40px';
         if (clicked_id == 'finger1ID') {
@@ -269,32 +276,33 @@ function clickHandler(clicked_id) { // resetting specific nail after all designs
     }
     else {
         if (numDesign == 5 && colorBool == true) {
-            pickerInd.style.display = "flex";
+            // pickerInd.style.display = "flex";
             // triangle.style.top = '340px';
             triangle.style.visibility = 'none';
             pickerInd.style.visibility = "visible";
+            pickerInd.style.display = "block";
             if (clicked_id == 'finger1ID') {
-                pickerInd.style.left = '185px';
+                pickerInd.style.left = '-933px';
                 // triangle.style.left = '404px';
                 num = 1;
             }
             if (clicked_id == 'finger2ID') {
-                pickerInd.style.left = '326px';
+                pickerInd.style.left = '-731px';
                 // triangle.style.left = '545px';
                 num = 2;
             }
             if (clicked_id == 'finger3ID') {
-                pickerInd.style.left = '467px';
+                pickerInd.style.left = '-529px';
                 // triangle.style.left = '686px';
                 num = 3;
             }
             if (clicked_id == 'finger4ID') {
-                pickerInd.style.left = '608px';
+                pickerInd.style.left = '-327px';
                 // triangle.style.left = '827px';
                 num = 4;
             }
             if (clicked_id == 'finger5ID') {
-                pickerInd.style.left = '749px';
+                pickerInd.style.left = '-125px';
                 // triangle.style.left = '968px';
                 num = 5;
             }
@@ -306,6 +314,7 @@ function alwaysRunning() {
     if (clear == 0) {
         isNailClear = false;
     }
+
     else {
         if (clear > 0 && clear <= 5) {
             isNailClear = true;

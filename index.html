@@ -65,11 +65,13 @@
         <div id="indQ"><br>- Select the INDIVIDUAL nail you are changing
             <button class="buttonRec" id="design">Design</button>
             <button class="buttonRec" id="color">Color</button>
-            <button id="invisibleButton" onclick="buttonAlert()"></button>
+            
         </div>
 
+        <div id="invButton">
+            <button id="invisibleButton" onclick="buttonAlert()"></button>
+        </div>
         
-
         <div class="row" id="row">
             <div class="nails center row">
                 <div id="triangle-down"></div>
@@ -83,12 +85,13 @@
                     onclick="clickHandler(this.id)"></div>
                 <div class="finger" id="finger5ID" img src='./img/emptyNail.png' onchange="setColor(this)"
                     onclick="clickHandler(this.id)"></div>
+                <div id="pickerInd">
+                    <input type="color" name="favcolor" value="#ffffff" id="pickerInd" onchange="setColor(this);" />
+                </div>
             </div>
         </div>
 
-        <div id="pickerInd">
-            <input type="color" name="favcolor" value="#ffffff" id="pickerInd" onchange="setColor(this);" />
-        </div>
+
 
         <div class="price" id="price">
             <p>Price: $<span id="cost"></span></p>
