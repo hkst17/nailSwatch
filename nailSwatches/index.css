@@ -1,8 +1,22 @@
+@media only screen and (min-width: 320px) 
+and (max-width: 812px) and (orientation: portrait) { 
+    body{
+        width: 50%;
+    }
+}
+
+
+.header {
+    /* position: static; */
+    display: flex;
+    justify-content: space-around;
+}
+
 .dropdown {
     display: inline-block;
     position: relative;
     margin-top: 20px;
-    left: -65px;
+    /* left: -65px; */
     top: -35px;
 }
 
@@ -34,9 +48,12 @@
     border-radius: 5px;
 }
 
+
+
 .buttonRec {
     cursor: pointer;
     background-color: #FD91CF;
+    /* font-family: 'More Sugar Thin', sans-serif; */
     font-family: 'More Sugar', sans-serif;
     font-size: 20px;
     width: max-content;
@@ -44,6 +61,22 @@
     border-radius: 10px;
     color: white;
     margin: 5px;
+}
+
+.dot {
+    cursor: pointer;
+    font-family: 'More Sugar', sans-serif;
+    font-size: medium;
+    color: white;
+    height: 30px;
+    width: 30px;
+    background-color: #FD91CF;
+    border-radius: 50%;
+    
+    /* display: block;
+    position: static; */
+    /* left: -360px; */
+    /* bottom: -5px; */
 }
 
 .nailChoice {
@@ -57,25 +90,30 @@
     margin-top: 25px;
     padding: 50px;
     height: max-content;
+    width: 1100px;
 }
 
 .row {
-    display: flex;
+    display: inline-block;
     width: max-content;
-    margin-top: 40px;
-    margin-bottom: 55px;
+    /* margin-top: -60px; */
+    /* margin-bottom: 55px; */
 }
 
 .nails {
     margin: -50px;
+    margin-top: -20px;
     display: inline-block;
     flex-direction: row;
     position: relative;
     scale: 70%;
     width: fit-content;
+
 }
 
 .finger {
+
+    background-image: url('./img/emptyNail.png');
     background-color: white;
     border: 1px solid #000000;
     width: 100px;
@@ -92,8 +130,8 @@
 .price {
     /* display: none; */
     position: relative;
-    right: -365px;
-    top: -40px;
+    right: -425px;
+    top: -25px;
 }
 
 .action {
@@ -108,22 +146,34 @@
 }
 
 #reset {
-    width: fit-content;
-    position: relative;
-    right: -400px;
-    scale: 80%;
+    /* width: fit-content; */
+    /* position: static;
+    display: block; */
+    /* right: -450px; */
+    
+    scale: 85%;
+    
 }
 
 #picker {
     display: none;
-    margin-bottom: -50px;
+    position: relative;
+    /* bottom: -40px; */
+    /* left: 25px; */
+    /* left: -257px; */
+    /* left: 25px; 25 is middle */
+    margin-bottom: -30px;
 }
 
-#color_picker {
-    position: relative;
+#color_picker1 {
+    /* position: relative;
     bottom: -17px;
-    right: -10px;
+    right: -10px; */
+    position: relative;
+    left: 5px;
+    bottom: -15px;
 }
+
 
 #triangle-down {
     width: 0;
@@ -132,9 +182,42 @@
     border-right: 25px solid transparent;
     border-top: 50px solid #FD91CF;
     scale: 50%;
-    top: 225px;
-    right: 970px;
-    position: absolute;
+    top: -150px; 
+    right: -125px;
+    position: relative;
+    /* display: flex;
+    align-items: start; */
+}
+
+
+
+#designOrColor {
+    position: relative;
+    /* visibility: hidden; */
+    /* right:0px; */
+}
+
+#pickerInd {
+    position: relative;
+    /* left: 58px;  */
+    top: 85px;
+    /* visibility: hidden; */
+}
+
+#indQ {
+    left: 35px;
+    position: relative;
+    display: none;
+}
+
+#invisibleButton {
+    display: none;
+    opacity: 0%;
+    width: 68px;
+    height: 34px;
+    position: relative;
+    right: -245px;
+    top: -39px;
 }
 
 button:hover {
@@ -144,7 +227,8 @@ button:hover {
 
 h1 {
     font-family: 'More Sugar', sans-serif;
-    font-size: 50px;
+    font-size: 45px;
+    /* font-variant: petite-caps; */
     margin-bottom: -10px;
     margin-top: -10px;
 }
@@ -161,6 +245,7 @@ p {
 body {
     background-color: white;
     font-family: 'More Sugar', sans-serif;
+    /* font-family: 'More Sugar Thin', sans-serif; */
     text-align: center;
     color: white;
     align-content: center;
