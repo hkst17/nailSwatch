@@ -19,6 +19,7 @@
         left: -120px;
         scale: 50%;
         top: -50px;
+        display: flex;
     }
 
     .nails {
@@ -31,6 +32,7 @@
         width: fit-content;
 
     }
+
     .finger {
 
         background-image: url('./img/emptyNail.png');
@@ -91,7 +93,6 @@
     .buttonRec {
         cursor: pointer;
         background-color: #FD91CF;
-        /* font-family: 'More Sugar Thin', sans-serif; */
         font-family: 'More Sugar', sans-serif;
         font-size: 20px;
         width: max-content;
@@ -110,11 +111,6 @@
         width: 30px;
         background-color: #FD91CF;
         border-radius: 50%;
-
-        /* display: block;
-    position: static; */
-        /* left: -360px; */
-        /* bottom: -5px; */
     }
 
     #indQ {
@@ -141,34 +137,20 @@
     }
 
     #reset {
-        /* width: fit-content; */
-        /* position: static;
-    display: block; */
-        /* right: -450px; */
-
         scale: 85%;
-
     }
 
     #picker {
         display: none;
         position: relative;
-        /* bottom: -40px; */
-        /* left: 25px; */
-        /* left: -257px; */
-        /* left: 25px; 25 is middle */
         margin-bottom: -30px;
     }
 
     #color_picker1 {
-        /* position: relative;
-    bottom: -17px;
-    right: -10px; */
         position: relative;
         left: 5px;
         bottom: -15px;
     }
-
 
     #triangle-down {
         width: 0;
@@ -180,23 +162,15 @@
         top: -150px;
         right: -125px;
         position: relative;
-        /* display: flex;
-    align-items: start; */
     }
-
-
 
     #designOrColor {
         position: relative;
-        /* visibility: hidden; */
-        /* right:0px; */
     }
 
     #pickerInd {
         position: relative;
-        /* left: 58px;  */
         top: 85px;
-        /* visibility: hidden; */
     }
 
     #nailSetContainer {
@@ -222,7 +196,6 @@
     h1 {
         font-family: 'More Sugar', sans-serif;
         font-size: 45px;
-        /* font-variant: petite-caps; */
         margin-bottom: -10px;
         margin-top: -10px;
     }
@@ -239,7 +212,6 @@
     body {
         background-color: white;
         font-family: 'More Sugar', sans-serif;
-
         text-align: center;
         color: white;
         align-content: center;
@@ -256,7 +228,6 @@
 }
 
 @media only screen and (min-width: 813px) {
-
 
     .header {
         display: flex;
@@ -298,12 +269,9 @@
         border-radius: 5px;
     }
 
-
-
     .buttonRec {
         cursor: pointer;
         background-color: #FD91CF;
-        /* font-family: 'More Sugar Thin', sans-serif; */
         font-family: 'More Sugar', sans-serif;
         font-size: 20px;
         width: max-content;
@@ -322,11 +290,6 @@
         width: 30px;
         background-color: #FD91CF;
         border-radius: 50%;
-
-        /* display: block;
-    position: static; */
-        /* left: -360px; */
-        /* bottom: -5px; */
     }
 
     .nailChoice {
@@ -356,7 +319,6 @@
         position: relative;
         scale: 70%;
         width: fit-content;
-
     }
 
     .finger {
@@ -393,34 +355,20 @@
     }
 
     #reset {
-        /* width: fit-content; */
-        /* position: static;
-    display: block; */
-        /* right: -450px; */
-
         scale: 85%;
-
     }
 
     #picker {
         display: none;
         position: relative;
-        /* bottom: -40px; */
-        /* left: 25px; */
-        /* left: -257px; */
-        /* left: 25px; 25 is middle */
         margin-bottom: -30px;
     }
 
     #color_picker1 {
-        /* position: relative;
-    bottom: -17px;
-    right: -10px; */
         position: relative;
         left: 5px;
         bottom: -15px;
     }
-
 
     #triangle-down {
         width: 0;
@@ -432,23 +380,15 @@
         top: -150px;
         right: -125px;
         position: relative;
-        /* display: flex;
-    align-items: start; */
     }
-
-
 
     #designOrColor {
         position: relative;
-        /* visibility: hidden; */
-        /* right:0px; */
     }
 
     #pickerInd {
         position: relative;
-        /* left: 58px;  */
         top: 85px;
-        /* visibility: hidden; */
     }
 
     #indQ {
@@ -475,7 +415,6 @@
     h1 {
         font-family: 'More Sugar', sans-serif;
         font-size: 45px;
-        /* font-variant: petite-caps; */
         margin-bottom: -10px;
         margin-top: -10px;
     }
@@ -492,7 +431,6 @@
     body {
         background-color: white;
         font-family: 'More Sugar', sans-serif;
-
         text-align: center;
         color: white;
         align-content: center;
