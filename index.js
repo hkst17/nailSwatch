@@ -2,6 +2,7 @@ let num = 1;    // # of what nail you are picking
 let numDesign = 0;  // tracker of which nails already have designs on them
 let clear = 0;  // if nail design clear is included
 let price1 = 0; // total price of set
+// let popUpCount = 0;
 let isNailClear = false;
 let designBool = true; // design is picked auto
 let colorBool = false;
@@ -12,9 +13,30 @@ document.getElementById('price').style.display = 'none';
 pickerInd.style.visibility = 'hidden';
 const indQ = document.getElementById('indQ');
 indQ.style.display = 'none';
+const popUp = document.getElementById('popUpText');
+const cancel = document.getElementById('cancel');
 
 function buttonAlert() {
     alert("Please select a style for this nail first");
+}
+
+function popUpBox() {
+    // ++popUpCount;
+    cancel.classList.toggle('show');
+    popUp.classList.toggle('show');
+    
+    // if(Math.abs(popUpCount % 2) == 1){
+    //     // document.getElementById("dot").disabled = true;
+    //     document.getElementById("cancel").style.visibility = "visible";
+    //     document.getElementById("dot").style.visibility = "hidden";
+    // }
+    // if(popUpCount % 2 == 0){
+    //     // document.getElementById("cancel").disabled = true;
+    //     document.getElementById("dot").style.visibility = "visible";
+    //     document.getElementById("cancel").style.visibility = "hidden";
+    // }
+    // document.getElementById("cancel").style.visibility = "hidden";
+    // console.log("you clicked pop up");
 }
 
 design.addEventListener("click", function () {

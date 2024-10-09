@@ -10,13 +10,31 @@
     <title>Nail Swatches</title>
     <script src="./index.js" defer></script>
 </head>
-
 <body class="center"
     onload="show('basic', 'ALL'); show('elegantFlower', 'ALL'); show('spongebob', 'ALL'); show('winter', 'ALL'); show('cny', 'ALL'); price(0)">
-
+    
     <div class="container">
         <div class="header">
-            <button class="dot">?</button>
+            <div class="popup">
+                <button class="cancel" id="cancel" onclick="popUpBox()">X</button>
+                <button class="dot" id="dot" onclick="popUpBox()">?
+                    <span class="popUpText" id="popUpText">
+                        
+                        <h1><u>INSTRUCTIONS</u></h1>
+                        <h2>Look at the designs and click on a design you like. <br>Keep picking until you have 5 designs. <br>The price will show up after you have picked your set!</h2>
+                        <br>
+                        <h3>- There are some sets where you can't change the color (marked with a *). <br>If you would like a custom color, please let me know. </h3>
+                        <br>
+                        <h3>- There is a filter option on top to see a specific set.</h3>
+                        <br>
+                        <h3>- Want to change your design?<br>Click on which nail to change, then pick the new design.</h3>
+                        <br>
+                        <h3>- Change the color of your nails at once or <br>click the color button to change individual nail color.</h3>
+                        <br>
+                        <h3>- Press 'reset all nails' on the top right to make a brand new set!</h3>
+                    </span>
+                </button>
+            </div>
             <button class="buttonRec" onclick="reset('white')" id="reset">Reset all nails</button>
         </div>
         <div class="dropdown" id="dropdown">
@@ -89,19 +107,19 @@
         <div id="nailSetContainer">
 
             <div class="action" id="basic">
-                <h2>Basics</h2>
-                <img src='./img/frenchTip.png' class="nailChoice" id="nailChoice" id="nailChoice"
+                <h2 class="nailSetName">Basics</h2>
+                <img src='./img/frenchTip.png' class="nailChoice" id="nailChoice"
                     onclick="isClear(); price(3.5); finger('./img/frenchTip-clear.png')" />
-                <img src='./img/ombre-full.png' class="nailChoice" id="nailChoice" id="nailChoice"
+                <img src='./img/ombre-full.png' class="nailChoice" id="nailChoice"
                     onclick="isClear(); price(3.5); finger('./img/ombre.png')" />
-                <img src='./img/half.png' class="nailChoice" id="nailChoice" id="nailChoice"
+                <img src='./img/half.png' class="nailChoice" id="nailChoice" 
                     onclick="isClear(); price(3.25); finger('./img/half-clear.png')" />
                 <img src='./img/baseNail.png' class="nailChoice" id="nailChoice"
                     onclick="isClear(); price(3); finger('./img/baseNail-clear.png')" />
             </div>
 
             <div class="action" id="elegantFlower">
-                <h2>Elegant Flower</h2>
+                <h2 class="nailSetName">Elegant Flower</h2>
                 <img src='./img/frenchTipWFlower.png' class="nailChoice" id="nailChoice"
                     onclick="isClear(); price(4); finger('./img/frenchTipsWFlower-clear.png')" />
                 <img src='./img/frenchTipsWFlowers.png' class="nailChoice" id="nailChoice"
@@ -113,7 +131,7 @@
             </div>
 
             <div class="action" id="spongebob">
-                <h2>Spongebob*</h2>
+                <h2 class="nailSetName">Spongebob<span class="firstSpan">*<span class="secondSpan">Color not changeable</span></span></h2>
                 <img src='./img/spongebobFlowers.png' class="nailChoice" id="nailChoice"
                     onclick="price(9); finger('./img/spongebobFlowers.png')" />
                 <img src='./img/spongebobIceCream.png' class="nailChoice" id="nailChoice"
@@ -127,7 +145,7 @@
             </div>
 
             <div class="action" id="winter">
-                <h2>Winter*</h2>
+                <h2 class="nailSetName">Winter<span class="firstSpan">*<span class="secondSpan">Color not changeable</span></span></h2>
                 <img src='./img/winterBear.png' class="nailChoice" id="nailChoice"
                     onclick="price(9); finger('./img/winterBear.png')" />
                 <img src='./img/winterHeart.png' class="nailChoice" id="nailChoice"
@@ -143,7 +161,7 @@
             </div>
 
             <div class="action" id="cny">
-                <h2>Chinese New Year*</h2>
+                <h2 class="nailSetName">Chinese New Year<span class="firstSpan">*<span class="secondSpan">Color not changeable</span></span></h2>
                 <img src='./img/cnyCat.png' class="nailChoice" id="nailChoice"
                     onclick="price(9); finger('./img/cnyCat.png')" />
                 <img src='./img/cnyDragon.png' class="nailChoice" id="nailChoice"
