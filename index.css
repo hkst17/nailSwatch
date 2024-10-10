@@ -281,11 +281,9 @@
         position: absolute;
         left: 0;
         right: 0;
-        
+
     }
-
-    h2 {}
-
+    
     p {
         font-size: 18px;
     }
