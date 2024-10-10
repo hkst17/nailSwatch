@@ -12,6 +12,10 @@
         padding: 50px;
         height: max-content;
         width: 70%;
+        position: absolute;
+        top: 0px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .row {
@@ -52,6 +56,39 @@
     .header {
         display: flex;
         justify-content: space-between;
+    }
+
+    .popup {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .popup .popUpText {
+        visibility: hidden;
+        width: 200px;
+        height: fit-content;
+        background-color: #a4cfff;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding-top: 50px;
+        margin-top: -10px;
+        padding: 50px;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        /* margin-left: auto;
+        margin-right: auto; */
+    }
+
+    .popup .show {
+        visibility: visible;
     }
 
     .dropdown {
@@ -102,6 +139,22 @@
         margin: 5px;
     }
 
+    .cancel {
+        visibility: hidden;
+        cursor: pointer;
+        font-family: 'More Sugar', sans-serif;
+        font-size: medium;
+        color: white;
+        height: 30px;
+        width: 30px;
+        background-color: #FD91CF;
+        border-radius: 50%;
+        position: absolute;
+        right: -280px;
+        top: -20px;
+        z-index: 4;
+    }
+
     .dot {
         cursor: pointer;
         font-family: 'More Sugar', sans-serif;
@@ -139,6 +192,28 @@
     .nailSetName {
         position: relative;
         top: 30px;
+    }
+
+    .firstSpan {
+        color: rgb(255, 255, 255);
+    }
+
+    .firstSpan .secondSpan {
+        visibility: hidden;
+        width: 180px;
+        background-color: gray;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        font-size: 15px;
+        margin-left: 20px;
+    }
+
+    .firstSpan:hover .secondSpan {
+        visibility: visible;
     }
 
     #reset {
@@ -195,14 +270,18 @@
 
     button:hover {
         background-color: #ff63bb;
-        transition: 0.7s;
+        /* transition: 0.7s; */
     }
 
     h1 {
         font-family: 'More Sugar', sans-serif;
-        font-size: 45px;
-        margin-bottom: -10px;
-        margin-top: -10px;
+        font-size: 28px;
+        /* margin-bottom: -10px; */
+        margin-top: -30px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        
     }
 
     h2 {}
