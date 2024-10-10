@@ -38,7 +38,6 @@
     }
 
     .finger {
-
         background-image: url('./img/emptyNail.png');
         background-color: white;
         border: 1px solid #000000;
@@ -283,7 +282,7 @@
         right: 0;
 
     }
-    
+
     p {
         font-size: 18px;
     }
@@ -303,6 +302,8 @@
         background-image: linear-gradient(90deg, rgba(141, 199, 293, .5) 50%, transparent 0),
             linear-gradient(rgba(141, 199, 293, .5) 50%, transparent 0);
         background-size: 125px 125px;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }
 
